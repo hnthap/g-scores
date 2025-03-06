@@ -1,0 +1,8 @@
+**/dist/
+**/node_modules/
+**/*.env
+db/data/*
+!db/data/*.csv
+!db/data/.git*
+.docker.env
+db.docker.env
