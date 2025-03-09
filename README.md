@@ -36,7 +36,7 @@ The frontend web application's layout is only designed to view on Desktop.
 
 ## Setup
 
-At the root of this repository, copy the file [`db.docker.env-example`](./db.docker.env-example) to a new file `db.docker.env` and change the passwords according to your references. Then, run:
+At the root of this repository, copy the file [`db.docker.env-example`](./db.docker.env-example) to a new file `db.docker.env` and change the passwords according to your preference. Then, run:
 
 ```bash
 # May takes 1-2 minutes to build
