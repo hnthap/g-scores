@@ -25,7 +25,7 @@
 
 This is **G-Scores**, a web application for looking up the result of the High School Graduation Examination.
 
-This application uses **MySQL** as database, **Django** as backend and vanilla JavaScript using **JQuery** with HTML and CSS as frontend. Each part of the application is containerized and can be deployed locally in one go using **Docker Compose**.
+This application uses **MySQL** as database, **Django** as backend and vanilla JavaScript using **JQuery** with HTML and CSS as frontend. Each part of the application is containerized and can be deployed locally in one go using **Docker Compose**. An **OOP design** presents in the inheritance of Models in the Django project.
 
 The frontend web application's layout is only designed to view on Desktop.
 
