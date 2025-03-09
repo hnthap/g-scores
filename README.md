@@ -36,29 +36,35 @@ The frontend web application's layout is only designed to view on Desktop.
 
 ## Setup
 
-At the root of this repository, add a file `db.docker.env` with the content (see the file [`db.docker.env-example`](./db.docker.env-example)):
-
-```dotenv
-MYSQL_HOST=db
-MYSQL_USER=<replace this with the actual username>
-MYSQL_PASSWORD=<replace this with the actual password>
-MYSQL_ROOT_PASSWORD=<replace this with the actual root password>
-```
-
-Then run:
+At the root of this repository, copy the file [`db.docker.env-example`](./db.docker.env-example) to a new file `db.docker.env` and change the passwords according to your references. Then, run:
 
 ```bash
 # May takes 1-2 minutes to build
 docker-compose up --build --detach
 ```
 
-After the containers started, go to `http://localhost:8080` to access the frontend. The backend serves at `http://localhost:3000`.
-
 To stop the containers, run:
 
 ```bash
 docker-compose down -v
 ```
+
+## Usage
+
+### Frontend
+
+After the containers started, go to `http://localhost:8080` to access the frontend.
+
+### Backend
+
+The backend serves as a CRUD API at `http://localhost:3000`:
+
+* `GET /student/{registration number}/`:
+  * Get the student's scores by his/her registration number.
+* `GET /report/{subject name}/`:
+  * Get the numbers of students by level in the specified subject (`toan`, `ngu_van`, etc.).
+* `GET /top/`:
+  * Get top 10 students in Group A.
 
 ## To-Dos
 
