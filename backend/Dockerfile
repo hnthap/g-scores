@@ -15,8 +15,11 @@ RUN pip install -r requirements.txt --no-cache-dir
 
 COPY . .
 
-RUN chmod +x docker-entrypoint.sh
+RUN apt-get install dos2unix
+RUN dos2unix --newfile docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 RUN apt-get install netcat curl -y
 
-ENTRYPOINT [ "bash", "/usr/src/app/docker-entrypoint.sh" ]
+ENTRYPOINT [ "bash", "/usr/local/bin/docker-entrypoint.sh" ]
