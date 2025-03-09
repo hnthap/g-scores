@@ -2,22 +2,22 @@ DROP DATABASE IF EXISTS gscores;
 
 CREATE DATABASE gscores;
 
-CREATE TABLE gscores.scoreboard (
-    sbd             CHAR(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    toan            DECIMAL(2, 2) DEFAULT NULL,
-    ngu_van         DECIMAL(2, 2) DEFAULT NULL,
-    ngoai_ngu       DECIMAL(2, 2) DEFAULT NULL,
-    vat_li          DECIMAL(2, 2) DEFAULT NULL,
-    hoa_hoc         DECIMAL(2, 2) DEFAULT NULL,
-    sinh_hoc        DECIMAL(2, 2) DEFAULT NULL,
-    lich_su         DECIMAL(2, 2) DEFAULT NULL,
-    dia_li          DECIMAL(2, 2) DEFAULT NULL,
-    gdcd            DECIMAL(2, 2) DEFAULT NULL,
+CREATE TABLE gscores.djangobackend_student (
+    sbd             CHAR(8) NOT NULL PRIMARY KEY,
+    toan            DECIMAL(4, 2) DEFAULT NULL,
+    ngu_van         DECIMAL(4, 2) DEFAULT NULL,
+    ngoai_ngu       DECIMAL(4, 2) DEFAULT NULL,
+    vat_li          DECIMAL(4, 2) DEFAULT NULL,
+    hoa_hoc         DECIMAL(4, 2) DEFAULT NULL,
+    sinh_hoc        DECIMAL(4, 2) DEFAULT NULL,
+    lich_su         DECIMAL(4, 2) DEFAULT NULL,
+    dia_li          DECIMAL(4, 2) DEFAULT NULL,
+    gdcd            DECIMAL(4, 2) DEFAULT NULL,
     ma_ngoai_ngu    CHAR(2) DEFAULT NULL
 );
 
-LOAD DATA 'scores.csv'
-INTO TABLE gscores.scoreboard
+LOAD DATA INFILE '/var/lib/mysql-files/scores.csv'
+INTO TABLE gscores.djangobackend_student
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'

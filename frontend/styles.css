@@ -1,0 +1,190 @@
+body {
+    --fg-1: white;
+    --bg-1: #222;
+    --bg-2: #333;
+    --bg-3: #555;
+    --bg-green-1: #06402B;
+    --bg-green-2: #285D34;
+    --ff-1: Arial, Helvetica, sans-serif;
+    --ff-2: Georgia, 'Times New Roman', Times, serif;
+
+    --desktop-sidenav-width: 150px;
+    --desktop-sidenav-padding: 20px;
+    --desktop-sidenav-item-padding-horizontal: 10px;
+    --desktop-content-padding: 20px;
+    --desktop-app-title-padding-vertical: 18px;
+    --desktop-formbox-padding-horizontal: 14px;
+    --desktop-box-margin-vertical: 20px;
+    --desktop-custom-border-radius: calc(var(--desktop-app-title-padding-vertical) / 2);
+
+    min-height: 100vh;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    font-family: var(--ff-1);
+}
+
+#sidenav {
+    min-width: var(--desktop-sidenav-width);
+    width: 25%;
+    max-width: calc(2 * var(--desktop-sidenav-width));
+    min-height: calc(100vh - 2 * var(--desktop-sidenav-padding));
+    background-color: var(--bg-2);
+    color: var(--fg-1);
+    padding: var(--desktop-sidenav-padding);
+    transition: all 0.3s ease-in-out;
+
+    & ul {
+        list-style-type: none;
+    }
+
+    & li {
+        padding-top: var(--desktop-sidenav-item-padding-horizontal);
+        padding-bottom: var(--desktop-sidenav-item-padding-horizontal);
+        padding-left: var(--desktop-sidenav-padding);
+        margin-left: calc(-2 * var(--desktop-content-padding));
+    }
+
+    & li:hover {
+        background-color: var(--bg-1);
+        transition: all 0.2s ease-in-out;
+    }
+
+    & a {
+        text-decoration: none;
+        color: var(--fg-1);
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+    }
+}
+
+#content {
+    background-color: var(--bg-1);
+    color: var(--fg-1);
+    width: calc(100% - var(--desktop-sidenav-width));
+    padding: var(--desktop-content-padding);
+}
+
+#app-title {
+    background-color: var(--bg-1);
+    color: var(--fg-1);
+    font-family: var(--ff-2);
+    font-variant: small-caps;
+    border-radius: var(--desktop-custom-border-radius);
+    font-size: 18pt;
+    text-align: center;
+    padding-top: var(--desktop-app-title-padding-vertical);
+    padding-bottom: var(--desktop-app-title-padding-vertical);
+}
+
+a.current {
+    font-weight: bold;
+}
+
+div.formbox, div.resultbox {
+    background-color: var(--bg-3);
+    border-radius: var(--desktop-custom-border-radius);
+    padding: 18px;
+    padding-left: var(--desktop-formbox-padding-horizontal);
+    padding-right: var(--desktop-formbox-padding-horizontal);
+    margin-top: var(--desktop-box-margin-vertical);
+    margin-bottom: var(--desktop-box-margin-vertical);
+}
+
+div.formbox {
+    & input, select {
+        font-family: var(--ff-1);
+        padding: 8px;
+        border-radius: calc(var(--desktop-custom-border-radius) / 2);
+        font-size: large;
+        margin: 2px;
+    }
+
+    & input[type='text'], select {
+        background-color: var(--bg-2);
+        color: var(--fg-1);
+        max-width: 300px;
+        min-width: 210px;
+        width: 40%;
+        font-family: var(--ff-2);
+    }
+
+    & input[type='submit'] {
+        background-color: var(--bg-1);
+        color: var(--fg-1);
+        max-width: 200px;
+        min-width: 80px;
+        width: 10%;
+    }
+}
+
+div.warn {
+    background-color: rgb(250, 70, 50);
+    border-radius: calc(var(--desktop-custom-border-radius) / 2);
+    padding: 8px;
+    margin: 5px;
+}
+
+table.table {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    border-collapse: collapse;
+
+    & th {
+        padding: 10px;
+        background-color: var(--bg-green-1);
+        border: 1px solid var(--bg-green-1);
+    }
+
+    & td {
+        background-color: var(--bg-green-2);
+        border: 1px solid var(--bg-green-2);
+    }
+}
+
+table#scoretable {
+    & .scoretable-subject, .scoretable-value {
+        padding: 6px;
+    }
+
+    & .scoretable-subject {
+        text-align: center;
+    }
+
+    & .scoretable-value {
+        text-align: left;
+    }
+
+    & .scoretable-failscore {
+        color: #FF474C;
+        font-weight: bold;
+    }
+}
+
+table.topstudenttable {
+    table-layout: fixed;
+
+    & th {
+        font-size: small;
+        /* writing-mode: vertical-lr;
+        text-orientation: sideways-right; */
+    }
+
+    & td {
+        padding: 6px;
+        text-align: center;
+    }
+}
+
+div#report-chart {
+    text-align: center;
+}

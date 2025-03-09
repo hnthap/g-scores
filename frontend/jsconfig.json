@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "checkJs": true,
+        "strictFunctionTypes": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "alwaysStrict": true,
+        "strictBindCallApply": true,
+        "strictPropertyInitialization": true,
+        "strictBuiltinIteratorReturn": true
+    },
+    "typeAcquisition": {
+        "include": [
+            "d3",
+            "jquery"
+        ]
+    }
+}
